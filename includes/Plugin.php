@@ -28,6 +28,18 @@ class Plugin {
         $this->name       = $args['name'];
 
         add_action( 'init', [ $this, 'languages' ] );
+        add_action( 'before_woocommerce_init', [ $this, 'declare_woocommerce_compatibility' ] );
+    }
+
+    /**
+     * Declare compatibility with WooCommerce High-Performance Order Storage (HPOS).
+     *
+     * @return void
+     */
+    public function declare_woocommerce_compatibility(): void {
+        if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $this->file, true );
+        }
     }
 
     public static function bootstrap( string $file, array $args ): void {

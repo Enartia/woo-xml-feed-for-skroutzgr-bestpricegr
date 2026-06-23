@@ -328,14 +328,6 @@ class PluginMainPage {
         echo '</td>';
         echo '</tr>';
 
-        $rollback = get_option( 'rollback' );
-
-        echo '<tr valign="top">';
-        echo '<th> <label for="rollback">' . __( 'Rollback to previous version', Plugin::textdomain() ) . ' </label></th>';
-        echo '<td><input style="margin-left:10px;" id="rollback" class="rollback" type="checkbox" name="rollback" value="1" ' . ( $rollback == 1 ? "checked" : "" ) . ' />';
-        echo "</br></br> <em>" . __( 'Select this <strong>ONLY</strong> if you already tried to product the XML feeds with the new 1.6.0. version of the plugin and experienced issues. <br/>The XML feeds will be produced the old way. Contact us at woordpress@enartia.com in order to resolve your issues before the next release.', Plugin::textdomain() ) . "</em>";
-        echo '</td>';
-        echo "</tr>";
         echo ' </table>';
         submit_button();
         echo '</form>';

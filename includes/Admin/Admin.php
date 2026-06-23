@@ -54,6 +54,13 @@ class Admin {
     }
 
     public function select2jquery_inline(): void {
+        // Select2 is enqueued only on this plugin's admin pages (see enqueue_admin_scripts()).
+        // Mirror that gate here so the inline .select2() call never runs on a screen without
+        // the library, where it throws "select2 is not a function".
+        $screen = get_current_screen();
+        if ( ! $screen || strpos( $screen->id, Plugin::key() ) === false ) {
+            return;
+        }
         ?>
         <style type="text/css">
             #main {
