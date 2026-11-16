@@ -3,7 +3,7 @@ Plugin URI: https://www.papaki.com
 Description: XML feed creator for Skroutz & Best Price
 Requires at least: 4.7
 Tested up to: 5.9.1
-Stable tag: 1.6.9.1
+Stable tag: 1.7.0.1
 Contributors: enartia,g.georgopoulos,georgekapsalakis,akatopodis
 Author URI: https://www.papaki.com
 WC tested up to: 6.2.1
@@ -109,6 +109,9 @@ If it hasn't any final category and product has only parent categories, it will 
 In order to have the description Tag in your xml, you have to add the description in the short description field in your product.
 
 == Changelog ==
+
+= Version 1.7.0.1 =
+Password-protected products and products hidden from the catalog are no longer included in the feeds.
 
 = Version 1.7.0.0 =
 Code refactoring.
