@@ -3,7 +3,7 @@
 /* Plugin Name: Skroutz & Bestprice XML feed for WooCommerce
   Plugin URI: https://www.papaki.com
   Description: XML feed creator for Skroutz & BestPrice
-  Version: 1.7.0.0
+  Version: 1.7.0.1
   Author: Papaki
   Author URI: https://www.papaki.com
   License: GPLv3 or later

@@ -136,6 +136,12 @@ class FeedGenerator {
                         continue;
                     }
 
+                    // The feeds are public files. A product behind a password, or hidden from the
+                    // shop, must not show up on Skroutz or BestPrice either. Its variations go with it.
+                    if ( $prod->get_post_password() !== '' || $prod->get_catalog_visibility() === 'hidden' ) {
+                        continue;
+                    }
+
                     if ( $prod->get_type() == 'variable' ) {
                         $available_variations = $prod->get_available_variations();
                         $variation_prices     = $prod->get_variation_prices();
